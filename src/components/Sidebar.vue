@@ -112,7 +112,7 @@ export default {
 }
 
 #sidebar .sidebar-header {
-  padding: 20px 20px 0px 20px;
+  padding: 40px 20px 0px 20px;
   text-align: center;
 }
 
@@ -285,4 +285,21 @@ ul.CTAs a {
   background: white;
   transition: left 0.15s ease-in;
 }
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -300px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
 </style>
