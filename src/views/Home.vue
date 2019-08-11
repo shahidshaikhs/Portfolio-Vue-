@@ -180,8 +180,26 @@
           </a>
         </div>
         <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
-        <h1>Work Experience</h1>
+        <h1>Statistics</h1>
         <p>I have been fortunate enough to work on a vast variety of fields with respect to Front End and Android Development.</p>
+        <div class="statistics-container">
+          <div class="statistics-container__card">
+            <i class="fas fa-boxes statistics-container__card--img bluish"></i>
+            <h1 class="statistics-container__card--heading">22</h1>
+            <p class="statistics-container__card--sub">Total Websites</p>
+          </div>
+          <div class="statistics-container__card">
+            <i class="fas fa-arrow-circle-down statistics-container__card--img yellowish"></i>
+            <h1 class="statistics-container__card--heading">450K</h1>
+            <p class="statistics-container__card--sub">Total Downloads</p>
+          </div>
+          <div class="statistics-container__card">
+            <i class="fab fa-youtube statistics-container__card--img reddish"></i>
+            <h1 class="statistics-container__card--heading">35</h1>
+            <p class="statistics-container__card--sub">Youtube App Reviews</p>
+          </div>
+        </div>
+        <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
       </div>
     </div>
   </div>
@@ -236,6 +254,8 @@ export default {
 .image_2 {
   max-width: 500px;
   border-radius: 5px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .btn-info {
@@ -346,6 +366,58 @@ export default {
       cursor: pointer;
       transform: scale(1.01);
     }
+  }
+}
+
+.statistics-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+
+  &__card {
+    padding: 2rem;
+    background-image: linear-gradient(
+      to right bottom,
+      #1a1a1a,
+      rgb(23, 23, 27)
+    );
+    border-radius: 8px;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.849);
+    text-align: center;
+
+    &--img {
+      font-size: 1.4rem;
+      padding: 0.8rem;
+      border-radius: 100px;
+    }
+
+    &--heading {
+      font-weight: 700;
+      margin-top: 1rem;
+      letter-spacing: 4px;
+      font-size: 4rem;
+      margin-bottom: 0;
+    }
+
+    &--sub {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .bluish {
+    background: #c2d8f8;
+    color: #247afa;
+  }
+
+  .yellowish {
+    background: #ffeab1;
+    color: #faa424;
+  }
+
+  .reddish {
+    background: #ffb5bf;
+    color: #fa2441;
   }
 }
 
