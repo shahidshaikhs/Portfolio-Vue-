@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <div class="wrapper" :class="(darkTheme) ? 'dark' : 'light'">
-      <app-sidebar @changeTheme="changeTheme" :showDrawer="showDrawer" :darkTheme='darkTheme'></app-sidebar>
-      <router-view @switchDrawer="switchDrawer" :darkTheme='darkTheme'/>
+      <app-sidebar
+        @switchDrawer="switchDrawer"
+        @changeTheme="changeTheme"
+        :showDrawer="showDrawer"
+        :darkTheme="darkTheme"
+      ></app-sidebar>
+      <router-view @switchDrawer="switchDrawer" :darkTheme="darkTheme" />
     </div>
   </div>
 </template>
@@ -55,6 +60,8 @@ a:focus {
   display: flex;
   width: 100%;
   align-items: stretch;
+  min-height: 100%;
+  flex-direction: row;
 }
 
 .navbar {
@@ -91,21 +98,18 @@ a:focus {
   color: #fff !important;
 }
 
-.dark-light{
+.dark-light {
   background: #141414 !important;
   color: #fff !important;
 }
 
 .light {
-  background: #FFF !important;
+  background: #fff !important;
   color: #333 !important;
 }
 
-.light-faded{
+.light-faded {
   background: #3b7eeb !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-
-
-
 </style>

@@ -3,6 +3,7 @@
   <nav :class="(showDrawer) ? 'active' : ''" id="sidebar">
     <div class="sidebar-container" :class="(darkTheme) ? 'dark-light' : 'light-faded'">
       <div class="sidebar-header">
+        <i class="fas fa-times-circle close-button py-2" @click="switchDrawer()"></i>
         <h4>Shahid Shaikh</h4>
         <img class="profile_img" src="../assets/images/profile.jpg" alt />
         <p>I'm a front end developer who strives to design apps with joyful and timeless user experiences.</p>
@@ -84,6 +85,9 @@ export default {
   methods: {
     changeTheme() {
       this.$emit("changeTheme");
+    },
+    switchDrawer() {
+      this.$emit("switchDrawer");
     }
   }
 };
@@ -95,16 +99,19 @@ export default {
   color: #fff !important;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
 }
 
-.divider-dark{
-    height: 1px;
-    border-bottom: 1px dashed rgba(128, 128, 128, 0.5);
+.divider-dark {
+  height: 1px;
+  border-bottom: 1px dashed rgba(128, 128, 128, 0.5);
 }
 
-.divider-light{
-    height: 1px;
-    border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
+.divider-light {
+  height: 1px;
+  border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
 }
 
 #sidebar.active {
@@ -138,8 +145,8 @@ export default {
   padding: 10px;
 }
 
-.list-unstyled .components li{
-    margin-top: 2rem;
+.list-unstyled .components li {
+  margin-top: 2rem;
 }
 
 #sidebar ul li a {
@@ -202,7 +209,7 @@ ul.CTAs a {
 }
 
 .active {
-  color: rgba(0,0,0,0.5) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .active-dark {
@@ -222,7 +229,7 @@ ul.CTAs a {
 }
 
 .hover-light:hover {
-  color: rgba(0,0,0,0.5) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .download-dark {
@@ -232,10 +239,12 @@ ul.CTAs a {
 
 .download-light {
   background: #5391f5;
-  color: #FFF;
+  color: #fff;
 }
 
-
+.close-button {
+  display: none;
+}
 
 /* ---------------------------------------------------
     CHECKBOX STYLE
@@ -300,6 +309,13 @@ ul.CTAs a {
   #sidebarCollapse span {
     display: none;
   }
+  .close-button {
+    font-size: 1.2rem;
+    display: inline-block;
+  }
+  .close-button:hover {
+    color: #3b7eeb;
+    cursor: pointer;
+  }
 }
-
 </style>

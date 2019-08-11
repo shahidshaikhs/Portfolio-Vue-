@@ -1,40 +1,188 @@
 <template>
   <div id="content" :class="(darkTheme) ? 'dark' : 'light'">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <button
-          type="button"
-          id="sidebarCollapse"
-          class="btn btn-info"
-          :class="(darkTheme) ? 'btn-info-dark' : 'btn-info-light'"
-          @click="switchDrawer()"
-        >
-          <i class="fas fa-align-left"></i>
-        </button>
-      </div>
-    </nav>
+    <div class="content-inner" :class="(showDrawer) ? 'padding-left' : ''">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button
+            type="button"
+            id="sidebarCollapse"
+            class="btn btn-info"
+            :class="(darkTheme) ? 'btn-info-dark' : 'btn-info-light'"
+            @click="switchDrawer()"
+          >
+            <i class="fas fa-align-left"></i>
+          </button>
+        </div>
+      </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <h1 class="font-weight-bold display-4">Shahid Shaikh</h1>
-          <h4 class="text-designation">Front End Developer</h4>
-          <br />
-          <p>
-            I'm a creative front‑end developer with 2+ years of professional experience, based in Mumbai.
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <h1 class="font-weight-bold display-4">Shahid Shaikh</h1>
+            <h4 class="text-designation">Front End Developer</h4>
             <br />
-            <br />I develop compelling designs that spring to life using transition and animations that suit my clients, using the sophisticated technologies available today for fully interactive and responsive websites and apps.
-          </p>
+            <p>
+              I'm a creative front‑end developer with 2+ years of professional experience, based in Mumbai.
+              <br />
+              <br />I invest a lot of energy in trying to do significant work with good code and design. It’s always a pleasure for me to take the trip of testing new technologies and new workflows.
+            </p>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <img
+              class="image_2 mb-3 mb-lg-0 ml-lg-5 mr-md-0"
+              src="../assets/images/profile-2.png"
+              alt
+            />
+          </div>
         </div>
-        <div class="col-sm-12 col-lg-6">
-          <img
-            class="image_2 mb-3 mb-lg-0 ml-lg-5 mr-md-0"
-            src="../assets/images/profile-2.png"
-            alt
-          />
+        <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
+        <h1>What do I do?</h1>
+        <p>HTML CSS and JavaScript are my mother tongues. However, programming is not my only field of focus, I’m interested in design, UX/UI, new technologies and much more.</p>
+        <div class="skills-container">
+          <div class="skills-container__card">
+            <i class="fab fa-js-square skills-container__card--img yellow"></i>
+            <h5 class="skills-container__card--heading">Javascript (ES6)</h5>
+            <p
+              class="skills-container__card--content"
+            >I have been working with Vanilla Javascript for more than 2 years now and have recently completed advance course with respect to ES6 as well</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-vuejs skills-container__card--img green"></i>
+            <h5 class="skills-container__card--heading">Vue JS</h5>
+            <p
+              class="skills-container__card--content"
+            >I have experience in developing dashboards, websites in Vue JS from scratch. Infact this entire website is made using VueJS as well</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-node-js skills-container__card--img green-node"></i>
+            <h5 class="skills-container__card--heading">Node JS</h5>
+            <p
+              class="skills-container__card--content"
+            >Can create Rest APIs connected with a backend database or full fledged websites using a templating language such as EJS / PUG</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-html5 skills-container__card--img red"></i>
+            <h5 class="skills-container__card--heading">HTML 5</h5>
+            <p
+              class="skills-container__card--content"
+            >Semantic HTML code is what I believe in. I have experience in writing HTML code since last four years now.</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-css3-alt skills-container__card--img blue"></i>
+            <h5 class="skills-container__card--heading">CSS 3</h5>
+            <p
+              class="skills-container__card--content"
+            >I know to code websites that are responsive on all sorts of devices such as Mobiles, Tablets or Desktops.</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-sass skills-container__card--img pink"></i>
+            <h5 class="skills-container__card--heading">SASS (CSS Preprocessor)</h5>
+            <p
+              class="skills-container__card--content"
+            >The CSS that you see on this website is written entirely in Syntactically Awesome Style Sheets (SASS)</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-adobe skills-container__card--img mr-3 blue"></i>
+            <i class="fab fa-figma skills-container__card--img mr-3 green"></i>
+            <i class="fab fa-sketch skills-container__card--img orange"></i>
+            <h5 class="skills-container__card--heading">Design Tools</h5>
+            <p
+              class="skills-container__card--content"
+            >I use Photoshop, XD, Illustrator, Figma or sketch while designing user interfaces for websites and mobile applications</p>
+          </div>
+          <div class="skills-container__card">
+            <i class="fab fa-android skills-container__card--img mr-3 green-node"></i>
+            <h5 class="skills-container__card--heading">Android SDK</h5>
+            <p
+              class="skills-container__card--content"
+            >I also have experience is designing and developing Android applications from scratch using Android Studio.</p>
+          </div>
         </div>
+        <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
+        <h1>Testimonials</h1>
+        <p>Below reviews are the ones which end users have left on Playstore or have communicated verbally</p>
+        <div class="testimonials-container">
+          <a
+            class="testimonials-container__card"
+            href="https://play.google.com/store/apps/details?id=com.shahid.nid&hl=en_IN&reviewId=gp%3AAOqpTOHkRenqJ2NYRfawXC3c6rTxIS691xARwxLPvSPRMHg7jHc_mL4EBI5toSO-6GhNrVueVnJKl9jImAvw0EI"
+            target="_blank"
+          >
+            <img
+              class="testimonials-container__card--img"
+              src="https://lh3.googleusercontent.com/a-/AAuE7mC9JAUOBRqwgfiLbnysNHmIq9_bDuPJNIwBJ_IyMA=w512"
+              alt
+            />
+            <h1 class="testimonials-container__card--heading">
+              Melissia Lenox
+              <br />
+              <span class="testimonials-container__card--heading-sub">Scrittor - A simple note app</span>
+            </h1>
+            <p
+              class="testimonials-container__card--content"
+            >&nbsp;&nbsp;&nbsp;&nbsp;Great app - intuitive features for those who just want a simple note-taking or writing app - I use it for jotting down things of interest, snippets, random ideas, and tidbits i come across online or in life that may be useful or ...</p>
+          </a>
+          <a
+            class="testimonials-container__card"
+            href="https://play.google.com/store/apps/details?id=com.shahid.nid&hl=en_IN&reviewId=gp%3AAOqpTOF06An7Etlc-LCohrIMOsqH5LK1A345uKiJsV1TehJZsj4U3bjcXORDYYBf6LlYacFsHQni5OyVnGbZWtg"
+            target="_blank"
+          >
+            <img
+              class="testimonials-container__card--img"
+              src="https://lh3.googleusercontent.com/a-/AAuE7mD6a04iKLbu26Fp1ZQCQbBtly1qach1YFGEjPU0Ww=w512"
+              alt
+            />
+            <h1 class="testimonials-container__card--heading">
+              Angiela Conte
+              <br />
+              <span class="testimonials-container__card--heading-sub">Scrittor - A simple note app</span>
+            </h1>
+            <p
+              class="testimonials-container__card--content"
+            >&nbsp;&nbsp;&nbsp;&nbsp;Straight forward, uncomplicated. Does what it's supposed to do. I wish it had text formatting though. Like the option to make certain texts bold, italic, etc. But it's cool as is. Thanks for the nice app, my dude. Live long and prosper.</p>
+          </a>
+          <a
+            class="testimonials-container__card"
+            href="https://play.google.com/store/apps/details?id=com.shahid.nid&hl=en_IN&reviewId=gp%3AAOqpTOFmV0Xm-aQROKHBLxUFMF5AM6_UyYA1DfsLDPsPoB9T9gwnF_nUM6Bf6SM6c3zLTie9ZMZh4PKd7vnCMhw"
+            target="_blank"
+          >
+            <img
+              class="testimonials-container__card--img"
+              src="https://lh3.googleusercontent.com/a-/AAuE7mCJ8GtNMNQSRp17ic-lOVDETa3dvxBv2uQp7bxN6VQ=w512"
+              alt
+            />
+            <h1 class="testimonials-container__card--heading">
+              Nida Siddiqui
+              <br />
+              <span class="testimonials-container__card--heading-sub">Scrittor - A simple note app</span>
+            </h1>
+            <p
+              class="testimonials-container__card--content"
+            >&nbsp;&nbsp;&nbsp;&nbsp;Was just searching for a suitable notepad sorta thing to write my contents. It's too cute and simple.Anyone can access your apps easily.Great job and Bless you Shahid!</p>
+          </a>
+          <a
+            class="testimonials-container__card"
+            href="https://play.google.com/store/apps/details?id=com.shahid.nid&hl=en_IN&reviewId=gp%3AAOqpTOGNz9Hnr-qT-OO6jEyNnyhU1pIfavqUMfwQmzWYaDdUqzMLfp8Mqp99rXC7_LIbkSqCpuw0plKbzZiuPQM"
+            target="_blank"
+          >
+            <img
+              class="testimonials-container__card--img"
+              src="https://lh3.googleusercontent.com/a-/AAuE7mA0YJvtcn7q8w3D1wxqQRiCLCppllhE0cSCjFL1As0=w512"
+              alt
+            />
+            <h1 class="testimonials-container__card--heading">
+              Francesco Soru
+              <br />
+              <span class="testimonials-container__card--heading-sub">Scrittor - A simple note app</span>
+            </h1>
+            <p
+              class="testimonials-container__card--content"
+            >&nbsp;&nbsp;&nbsp;&nbsp;Loved this app and was just waiting for Google backup. You just replied to my 6months old review to let me know it was implemented. Wow thank you so much I'll be using this app as my main note taking!</p>
+          </a>
+        </div>
+        <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
+        <h1>Work Experience</h1>
+        <p>I have been fortunate enough to work on a vast variety of fields with respect to Front End and Android Development.</p>
       </div>
-      <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
     </div>
   </div>
 </template>
@@ -43,10 +191,16 @@
 export default {
   name: "home",
   components: {},
+  data() {
+    return {
+      showDrawer: true
+    };
+  },
   props: ["darkTheme"],
   methods: {
     switchDrawer() {
       this.$emit("switchDrawer");
+      this.showDrawer = !this.showDrawer;
     }
   }
 };
@@ -60,7 +214,16 @@ export default {
   color: #fff;
 }
 
-.text-designation{
+.content-inner {
+  transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+}
+
+.padding-left {
+  padding-left: 300px;
+  transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+}
+
+.text-designation {
   background: #3b7eeb;
   display: inline-block;
   padding: 5px 10px;
@@ -89,6 +252,132 @@ export default {
   color: #333;
 }
 
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+
+  &__card {
+    padding: 2rem;
+    background-image: linear-gradient(
+      to right bottom,
+      #1a1a1a,
+      rgb(23, 23, 27)
+    );
+    border-radius: 8px;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.849);
+
+    &--img {
+      font-size: 2.2rem;
+    }
+
+    &--heading {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    &--content {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  &__card {
+    padding: 2rem;
+    background-image: linear-gradient(
+      to right bottom,
+      #1a1a1a,
+      rgb(23, 23, 27)
+    );
+    border-radius: 8px;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.849);
+
+    &--img {
+      height: 4.5rem;
+      border-radius: 100px;
+      display: inline-block;
+    }
+
+    &--heading {
+      margin-left: 1rem;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 1s;
+
+      &-sub {
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+    }
+
+    &--content {
+      margin-top: 1rem;
+      font-size: 1rem;
+      margin-bottom: 0;
+      transition: all 1s;
+      -webkit-line-clamp: 4; /* number of lines to show */
+
+      &::before {
+        content: open-quote;
+        color: #3b7eeb;
+        font-size: 2rem;
+        padding: 2px;
+        position: absolute;
+      }
+      &::after {
+        position: absolute;
+        content: close-quote;
+        color: #3b7eeb;
+        font-size: 2rem;
+        padding: 2px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+  }
+}
+
+// Colors
+.yellow {
+  color: #ffdc18;
+}
+
+.green {
+  color: #25ee9a;
+}
+
+.green-node {
+  color: #8add3d;
+}
+
+.red {
+  color: #ee2550;
+}
+
+.blue {
+  color: #247afa;
+}
+
+.pink {
+  color: #eb4c9b;
+}
+
+.orange {
+  color: #f58e2f;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -97,6 +386,17 @@ export default {
   .image_2 {
     margin: 0 auto;
     width: 100%;
+  }
+
+  .padding-left {
+    padding-left: 0px;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+  .skills-container {
+    grid-template-columns: 1fr;
   }
 }
 </style>
