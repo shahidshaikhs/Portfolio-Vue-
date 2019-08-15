@@ -33,15 +33,15 @@
       </div>
 
       <ul class="list-unstyled components">
-        <li class="active" :class="(darkTheme) ? 'hover-dark active-dark' : 'hover-light'">
-          <a href="#">
+        <li>
+          <router-link to="/" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-user-alt mr-2 fa-fw"></i>About Me
-          </a>
+          </router-link>
         </li>
         <li class="mt-3">
-          <a href="#" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
+          <router-link to="/portfolio" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-laptop-code mr-2 fa-fw"></i>Portfolio
-          </a>
+          </router-link>
         </li>
         <li class="mt-3">
           <a href="#" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
@@ -212,7 +212,7 @@ ul.CTAs a {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.active-dark {
+.router-link-exact-active {
   color: #3b7eeb !important;
 }
 

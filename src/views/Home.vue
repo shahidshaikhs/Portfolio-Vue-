@@ -198,15 +198,26 @@
             <h1 class="statistics-container__card--heading">22</h1>
             <p class="statistics-container__card--sub">Projects Completed</p>
           </div>
-          <div :class="(darkTheme) ? 'statistics-container__card' : 'statistics-container-light__card'">
+          <div
+            :class="(darkTheme) ? 'statistics-container__card' : 'statistics-container-light__card'"
+          >
             <i class="fas fa-arrow-circle-down statistics-container__card--img yellowish"></i>
             <h1 class="statistics-container__card--heading">450K</h1>
             <p class="statistics-container__card--sub">Total App Downloads</p>
           </div>
-          <div :class="(darkTheme) ? 'statistics-container__card' : 'statistics-container-light__card'">
+          <div
+            :class="(darkTheme) ? 'statistics-container__card' : 'statistics-container-light__card'"
+          >
             <i class="fab fa-youtube statistics-container__card--img reddish"></i>
             <h1 class="statistics-container__card--heading">35</h1>
             <p class="statistics-container__card--sub">Youtube App Reviews</p>
+          </div>
+          <div
+            :class="(darkTheme) ? 'statistics-container__card' : 'statistics-container-light__card'"
+          >
+            <i class="fas fa-briefcase statistics-container__card--img greenish"></i>
+            <h1 class="statistics-container__card--heading">3 Yrs.</h1>
+            <p class="statistics-container__card--sub">Total Work Experience</p>
           </div>
         </div>
         <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
@@ -468,7 +479,7 @@ export default {
 
 .statistics-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2rem;
 
   &__card {
@@ -492,7 +503,7 @@ export default {
       font-weight: 700;
       margin-top: 1rem;
       letter-spacing: 4px;
-      font-size: 4rem;
+      font-size: 2rem;
       margin-bottom: 0;
     }
 
@@ -505,7 +516,7 @@ export default {
 
 .statistics-container-light {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2rem;
 
   &__card {
@@ -525,7 +536,7 @@ export default {
       font-weight: 700;
       margin-top: 1rem;
       letter-spacing: 4px;
-      font-size: 4rem;
+      font-size: 2rem;
       margin-bottom: 0;
     }
 
@@ -580,6 +591,11 @@ export default {
   color: #fa2441;
 }
 
+.greenish {
+  background: #24fa96;
+  color: #0f9b5a;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -599,6 +615,18 @@ export default {
   }
   .skills-container {
     grid-template-columns: 1fr;
+  }
+  .statistics-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .testimonials-container-light {
+    grid-template-columns: 1fr;
+  }
+  .skills-container-light {
+    grid-template-columns: 1fr;
+  }
+  .statistics-container-light {
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>
