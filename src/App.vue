@@ -109,7 +109,7 @@ a:focus {
 }
 
 .light-faded {
-  background: #3b7eeb !important;
-  color: rgba(255, 255, 255, 0.8) !important;
+  border-right: 2px dashed #3b7eeb;
+  color: #333 !important;
 }
 </style>

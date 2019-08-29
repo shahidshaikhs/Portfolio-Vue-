@@ -44,14 +44,14 @@
           </router-link>
         </li>
         <li class="mt-3">
-          <a href="#" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
+          <router-link to="/resume" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-file-alt mr-2 fa-fw"></i>Resume
-          </a>
+          </router-link>
         </li>
         <li class="mt-3">
-          <a href="#" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
+          <router-link to="/contact" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-address-book mr-2 fa-fw"></i>Contact
-          </a>
+          </router-link>
         </li>
       </ul>
       <div class="divider mx-4" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
@@ -96,7 +96,6 @@ export default {
 #sidebar {
   min-width: 300px;
   max-width: 300px;
-  color: #fff !important;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
   position: fixed;
@@ -131,7 +130,6 @@ export default {
 
 #sidebar p {
   margin-top: 20px;
-  color: #fff;
   font-size: 14px;
 }
 
@@ -141,7 +139,6 @@ export default {
 }
 
 #sidebar ul p {
-  color: #fff;
   padding: 10px;
 }
 
@@ -212,10 +209,6 @@ ul.CTAs a {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.router-link-exact-active {
-  color: #3b7eeb !important;
-}
-
 .hover-dark {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -225,11 +218,15 @@ ul.CTAs a {
 }
 
 .hover-light {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(51, 51, 51, 0.788);
 }
 
 .hover-light:hover {
   color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.router-link-exact-active {
+  color: #3b7eeb !important;
 }
 
 .download-dark {
