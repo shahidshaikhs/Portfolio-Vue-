@@ -1,6 +1,9 @@
 <template>
   <!-- Sidebar  -->
-  <nav :class="[((showDrawer) ? 'active' : ''), ((darkTheme) ? 'dark-light' : 'light-faded')]" id="sidebar">
+  <nav
+    :class="[((showDrawer) ? 'active' : ''), ((darkTheme) ? 'dark-light' : 'light-faded')]"
+    id="sidebar"
+  >
     <div class="sidebar-container" :class="(darkTheme) ? 'dark-light' : 'light'">
       <div class="sidebar-header">
         <i class="fas fa-times-circle close-button py-2" @click="switchDrawer()"></i>
@@ -40,7 +43,7 @@
         </li>
         <li class="mt-3" @click="switchDrawer()">
           <router-link to="/portfolio" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
-            <i class="fas fa-laptop-code mr-2 fa-fw"></i>Portfolio
+            <i class="fas fa-code mr-2 fa-fw"></i>Portfolio
           </router-link>
         </li>
         <li class="mt-3" @click="switchDrawer()">
@@ -55,10 +58,7 @@
         </li>
       </ul>
       <div class="divider mx-4" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
-      <ul
-        class="list-unstyled CTAs bottom-content"
-        :class="(darkTheme) ? 'dark-light' : 'light'"
-      >
+      <ul class="list-unstyled CTAs bottom-content" :class="(darkTheme) ? 'dark-light' : 'light'">
         <li :class="(darkTheme) ? 'download-dark' : 'download-light '">
           <a
             href="https://github.com/shahidshaikhs/Portfolio-Vue-/archive/master.zip"
@@ -70,7 +70,12 @@
             <i class="fas fa-adjust mr-1"></i>Dark Mode:&nbsp;&nbsp;
           </h6>
           <label class="toggle-control">
-            <input type="checkbox" checked="checked" @change="changeTheme()" @click="switchDrawer()" />
+            <input
+              type="checkbox"
+              checked="checked"
+              @change="changeTheme()"
+              @click="switchDrawer()"
+            />
             <span class="control"></span>
           </label>
         </li>
@@ -82,6 +87,9 @@
 export default {
   name: "Sidebar",
   props: ["showDrawer", "darkTheme"],
+  created() {
+    window.scrollTo(0, 0);
+  },
   data() {
     return {
       windowWidth: window.innerWidth
@@ -92,11 +100,10 @@ export default {
       this.$emit("changeTheme");
     },
     switchDrawer() {
-      
       if (this.windowWidth < 800) {
         this.$emit("switchDrawer");
         this.showDrawer = !this.showDrawer;
-        console.log(this.windowWidth)
+        console.log(this.windowWidth);
       }
     }
   }

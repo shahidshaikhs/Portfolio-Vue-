@@ -34,6 +34,9 @@
 export default {
   name: "resume",
   components: {},
+  created(){
+    window.scrollTo(0, 0);
+  },
   data() {
     return {
       showDrawer: true

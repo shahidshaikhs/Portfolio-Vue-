@@ -67,6 +67,9 @@ export default {
       showDrawer: true
     };
   },
+  created(){
+    window.scrollTo(0, 0);
+  },
   props: ["darkTheme"],
   methods: {
     switchDrawer() {

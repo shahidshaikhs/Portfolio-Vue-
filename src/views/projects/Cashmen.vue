@@ -112,6 +112,9 @@
 <script>
 export default {
   name: "cashmen",
+  created(){
+    window.scrollTo(0, 0);
+  },
   components: {},
   data() {
     return {
