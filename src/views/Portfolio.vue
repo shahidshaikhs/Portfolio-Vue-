@@ -20,7 +20,7 @@
         <p>Welcome to my online portfolio where I showcase projects that I have worked on in the past or the ones that I am presently working on. Feel free to reach out to me if you have any questions regarding any of these.</p>
         <div :class="(darkTheme) ? 'projects-container' : 'projects-container-light'">
           <router-link
-            to
+            to="/portfolio/scrittor"
             :class="(darkTheme) ? 'projects-container__card' : 'projects-container-light__card'"
           >
             <div class="projects-container__card--left">
@@ -38,7 +38,7 @@
             </div>
           </router-link>
           <router-link
-            to
+            to="/portfolio/cashmen"
             :class="(darkTheme) ? 'projects-container__card' : 'projects-container-light__card'"
           >
             <div class="projects-container__card--left">
@@ -56,7 +56,7 @@
             </div>
           </router-link>
           <router-link
-            to
+            to="/portfolio/pulse"
             :class="(darkTheme) ? 'projects-container__card' : 'projects-container-light__card'"
           >
             <div class="projects-container__card--left">
@@ -74,14 +74,14 @@
             </div>
           </router-link>
           <router-link
-            to
+            to="/portfolio/pineapple"
             :class="(darkTheme) ? 'projects-container__card' : 'projects-container-light__card'"
           >
             <div class="projects-container__card--left">
               <h1 class="projects-container__card--heading buired-gd">Pineapple Icon Pack</h1>
               <p
                 class="projects-container__card--content"
-              >Following Google's Material Guidelines to the best of it's abilities. Consistency of each icon is very important when it comes to this icon pack, however they are still made in a creative way to make them stand out. </p>
+              >Following Google's Material Guidelines to the best of it's abilities. Consistency of each icon is very important when it comes to this icon pack, however they are still made in a creative way to make them stand out.</p>
             </div>
             <div style="position:relative">
               <img
@@ -91,8 +91,8 @@
               />
             </div>
           </router-link>
-           <router-link
-            to
+          <router-link
+            to="/portfolio/helpdesk"
             :class="(darkTheme) ? 'projects-container__card' : 'projects-container-light__card'"
           >
             <div class="projects-container__card--left">
@@ -237,5 +237,76 @@ export default {
 
 .buired-gd {
   background-image: linear-gradient(to right, #ff3259, #3d2ff4);
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .projects-container {
+    &__card {
+      grid-template-columns: 1fr;
+      grid-gap: 0rem;
+      border-radius: 8px;
+      box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.849);
+
+      &--left {
+        padding: 1.8rem;
+      }
+
+      &--img {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 1px 20px rgb(0, 0, 0);
+      }
+
+      &--heading {
+        letter-spacing: 2px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.3;
+      }
+
+      &--content {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .projects-container-light {
+    &__card {
+      grid-template-columns: 1fr;
+      grid-gap: 0rem;
+      border-radius: 8px;
+      box-shadow: none;
+
+      &--left {
+        padding: 1.8rem;
+      }
+
+      &--img {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 1px 20px rgb(0, 0, 0);
+      }
+
+      &--heading {
+        letter-spacing: 2px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.3;
+      }
+
+      &--content {
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
 </style>

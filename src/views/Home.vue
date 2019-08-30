@@ -103,7 +103,7 @@
             <h5 class="skills-container__card--heading">Android SDK</h5>
             <p
               class="skills-container__card--content"
-            >I also have experience is designing and developing Android applications from scratch using Android Studio.</p>
+            >I also have experience in designing and developing Android applications from scratch using Android Studio.</p>
           </div>
         </div>
         <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
@@ -627,6 +627,15 @@ export default {
   }
   .statistics-container-light {
     grid-template-columns: 1fr 1fr;
+    &--heading {
+      font-size: 1.2rem;
+    }
+  }
+  .statistics-container__card--heading{
+    font-size: 1.5rem;
+  }
+  .statistics-container__card--sub{
+    font-size: .8rem;
   }
 }
 </style>

@@ -109,6 +109,7 @@ a:focus {
 }
 
 .light-faded {
+  background-color: #FFF;
   border-right: 2px dashed #3b7eeb;
   color: #333 !important;
 }

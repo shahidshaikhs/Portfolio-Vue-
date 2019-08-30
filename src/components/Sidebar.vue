@@ -1,7 +1,7 @@
 <template>
   <!-- Sidebar  -->
-  <nav :class="(showDrawer) ? 'active' : ''" id="sidebar">
-    <div class="sidebar-container" :class="(darkTheme) ? 'dark-light' : 'light-faded'">
+  <nav :class="[((showDrawer) ? 'active' : ''), ((darkTheme) ? 'dark-light' : 'light-faded')]" id="sidebar">
+    <div class="sidebar-container" :class="(darkTheme) ? 'dark-light' : 'light'">
       <div class="sidebar-header">
         <i class="fas fa-times-circle close-button py-2" @click="switchDrawer()"></i>
         <h4>Shahid Shaikh</h4>
@@ -9,22 +9,22 @@
         <p>I'm a front end developer who strives to design apps with joyful and timeless user experiences.</p>
         <ul class="social-list list-inline py-2 mx-auto social-icons">
           <li class="list-inline-item" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
-            <a href="#">
+            <a href="https://twitter.com/__shahidshaikh" target="_blank">
               <i class="fab fa-twitter"></i>
             </a>
           </li>
           <li class="list-inline-item" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/shahid-shaikh-b9528497/" target="_blank">
               <i class="fab fa-linkedin"></i>
             </a>
           </li>
           <li class="list-inline-item" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
-            <a href="#">
+            <a href="http://github.com/shahidshaikhs" target="_blank">
               <i class="fab fa-github-alt"></i>
             </a>
           </li>
           <li class="list-inline-item" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
-            <a href="#">
+            <a href="https://codepen.io/shahidshaikhs" target="_blank">
               <i class="fab fa-codepen"></i>
             </a>
           </li>
@@ -33,32 +33,35 @@
       </div>
 
       <ul class="list-unstyled components">
-        <li>
+        <li @click="switchDrawer()">
           <router-link to="/" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-user-alt mr-2 fa-fw"></i>About Me
           </router-link>
         </li>
-        <li class="mt-3">
+        <li class="mt-3" @click="switchDrawer()">
           <router-link to="/portfolio" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-laptop-code mr-2 fa-fw"></i>Portfolio
           </router-link>
         </li>
-        <li class="mt-3">
+        <li class="mt-3" @click="switchDrawer()">
           <router-link to="/resume" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-file-alt mr-2 fa-fw"></i>Resume
           </router-link>
         </li>
-        <li class="mt-3">
+        <li class="mt-3" @click="switchDrawer()">
           <router-link to="/contact" :class="(darkTheme) ? 'hover-dark' : 'hover-light'">
             <i class="fas fa-address-book mr-2 fa-fw"></i>Contact
           </router-link>
         </li>
       </ul>
       <div class="divider mx-4" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
-      <ul class="list-unstyled CTAs">
+      <ul
+        class="list-unstyled CTAs bottom-content"
+        :class="(darkTheme) ? 'dark-light' : 'light'"
+      >
         <li :class="(darkTheme) ? 'download-dark' : 'download-light '">
           <a
-            href="https://bootstrapious.com/tutorial/files/sidebar.zip"
+            href="https://github.com/shahidshaikhs/Portfolio-Vue-/archive/master.zip"
             class="download"
           >Download source</a>
         </li>
@@ -67,7 +70,7 @@
             <i class="fas fa-adjust mr-1"></i>Dark Mode:&nbsp;&nbsp;
           </h6>
           <label class="toggle-control">
-            <input type="checkbox" checked="checked" @change="changeTheme()" />
+            <input type="checkbox" checked="checked" @change="changeTheme()" @click="switchDrawer()" />
             <span class="control"></span>
           </label>
         </li>
@@ -80,14 +83,21 @@ export default {
   name: "Sidebar",
   props: ["showDrawer", "darkTheme"],
   data() {
-    return {};
+    return {
+      windowWidth: window.innerWidth
+    };
   },
   methods: {
     changeTheme() {
       this.$emit("changeTheme");
     },
     switchDrawer() {
-      this.$emit("switchDrawer");
+      
+      if (this.windowWidth < 800) {
+        this.$emit("switchDrawer");
+        this.showDrawer = !this.showDrawer;
+        console.log(this.windowWidth)
+      }
     }
   }
 };
@@ -99,18 +109,29 @@ export default {
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
   position: fixed;
+  overflow: scroll;
+  overflow-x: hidden;
   height: 100%;
   z-index: 1;
 }
 
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
 .divider-dark {
   height: 1px;
-  border-bottom: 1px dashed rgba(128, 128, 128, 0.5);
+  border-bottom: 2px dashed rgba(128, 128, 128, 0.5);
 }
 
 .divider-light {
   height: 1px;
-  border-bottom: 1px dashed rgba(51, 51, 51, 0.5);
+  border-bottom: 2px dashed rgba(51, 51, 51, 0.5);
 }
 
 #sidebar.active {
@@ -313,6 +334,15 @@ ul.CTAs a {
   .close-button:hover {
     color: #3b7eeb;
     cursor: pointer;
+  }
+  #sidebar ul.components {
+    padding: 10px;
+  }
+  #sidebar .sidebar-header {
+    padding: 20px 20px 0px 20px;
+  }
+  .bottom-content {
+    margin-bottom: 0;
   }
 }
 </style>

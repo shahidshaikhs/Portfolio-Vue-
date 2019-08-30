@@ -25,58 +25,38 @@
         </p>
         <br />
         <p>Alternatively, you can reach out to me via below social media channels</p>
+        <br />
         <div class="social-media-container">
-          <a href="#">
+          <a href="https://twitter.com/__shahidshaikh" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/shahid-shaikh-b9528497/" target="_blank">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="#">
+          <a href="http://github.com/shahidshaikhs" target="_blank">
             <i class="fab fa-github-alt"></i>
           </a>
-          <a href="#">
+          <a href="https://codepen.io/shahidshaikhs" target="_blank">
             <i class="fab fa-codepen"></i>
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/__shahidshaikh/" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
         <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
-        <h1>Get in touch</h1>
-        <form action="POST" data-netlify="true">
-          <div class="form-group" :class="(darkTheme) ? 'form-group-dark' : ''">
-            <label for="name">Your Name</label>
-            <input
-              name="name"
-              type="text"
-              class="form-control"
-              id="name"
-              aria-describedby="emailHelp"
-              placeholder="What do people call you?"
-            />
-          </div>
-          <div class="form-group" :class="(darkTheme) ? 'form-group-dark' : ''">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-            />
-            <small
-              id="emailHelp"
-              class="form-text text-muted"
-            >I'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group" :class="(darkTheme) ? 'form-group-dark' : ''">
-            <label for="exampleFormControlTextarea1">Your Message</label>
-            <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <button type="submit" class="md-button">Submit</button>
-        </form>
+        <h1 class="display-5">About this Website</h1>
+        <p>
+          This website is made using Vue JS
+          <i class="fab fa-vuejs green"></i> Framework and CSS preprocessor such as SASS
+          <i class="fab fa-sass pink"></i>. The website is open source and can be found on Github
+          <i class="fab fa-github-alt blue"></i>. Feel free to reach out to me if you have any suggestions with regards to the same or if you have any questions. I would be happy to help you out.
+        </p>
+        <a
+          href="https://github.com/shahidshaikhs/Portfolio-Vue-/archive/master.zip"
+          class="md-button"
+        >
+          <i class="fas fa-code mr-2"></i>Download Source Code
+        </a>
         <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
       </div>
     </div>
@@ -105,10 +85,10 @@ export default {
   color: #3b7eeb;
 }
 .social-media-container {
-  width: 30%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0.5rem;
+  width: 50%;
 
   a {
     font-size: 1.6rem;
@@ -119,14 +99,24 @@ export default {
   }
 }
 
-.form-group-dark {
-  input {
-    background-color: #141414 !important;
-    border-color: #242424 !important;
-  }
-  textarea {
-    background-color: #141414 !important;
-    border-color: #242424 !important;
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .social-media-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.5rem;
+    width: 80%;
+
+    a {
+      font-size: 1.6rem;
+
+      &:hover {
+        color: #3b7eeb;
+      }
+    }
   }
 }
 </style>
