@@ -103,7 +103,6 @@ export default {
       if (this.windowWidth < 800) {
         this.$emit("switchDrawer");
         this.showDrawer = !this.showDrawer;
-        console.log(this.windowWidth);
       }
     }
   }

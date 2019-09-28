@@ -16,9 +16,9 @@
       </nav>
       <div class="container">
         <h1 class="display-4">Resume</h1>
-        <button class="md-button">
+        <a href="../assets/pdf/resume.pdf" target="_blank" class="md-button">
           <i class="fas fa-file-pdf mr-2"></i>Download PDF Version
-        </button>
+        </a>
         <div class="divider my-5" :class="(darkTheme) ? 'divider-dark' : 'divider-light'"></div>
         <img v-if="darkTheme" class="resume_img" src="../assets/images/resume_1.png" alt="">
         <div class="spacing-med"></div>

@@ -82,7 +82,7 @@
               </h1>
               <p
                 class="testimonials-container__card--content"
-              >&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ea nam natus impedit earum commodi porro quos in non excepturi necessitatibus doloribus iure, assumenda qui at fugit ratione eligendi architecto?</p>
+              >&nbsp;&nbsp;&nbsp;&nbsp;We just completed our new website Cashmen.in with Shahid Shaikh and are so excited to have it live!! It is so professionally done and eye appealing, not to mention how great it looks and works with mobile devices.</p>
             </a>
             <a
               :class="(darkTheme) ? 'testimonials-container__card' : 'testimonials-container-light__card'"
@@ -91,17 +91,17 @@
             >
               <img
                 class="testimonials-container__card--img"
-                src="https://lh3.googleusercontent.com/a-/AAuE7mD6a04iKLbu26Fp1ZQCQbBtly1qach1YFGEjPU0Ww=w512"
+                src="../../assets/images/mdd.jpg"
                 alt
               />
               <h1 class="testimonials-container__card--heading">
                 Muddassir Darbar
                 <br />
-                <span class="testimonials-container__card--heading-sub">Chief Executive Officer (CEO)</span>
+                <span class="testimonials-container__card--heading-sub">Chief Technology Officer (CTO)</span>
               </h1>
               <p
                 class="testimonials-container__card--content"
-              >&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, suscipit. Id odio perspiciatis iste quo dignissimos veniam in dicta error harum, praesentium fugiat culpa vitae recusandae! Earum iusto cumque quae.</p>
+              >&nbsp;&nbsp;&nbsp;&nbsp;We tried it on an iPhone and a Droid and it was great on both! We love how easy it is to make changes ourselves, (after some training from Shahid) even though we know we have the support when/if we need it from him.</p>
             </a>
           </div>
         </div>
